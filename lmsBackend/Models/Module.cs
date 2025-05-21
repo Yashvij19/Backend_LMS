@@ -17,6 +17,7 @@ namespace lmsBackend.Models
 
         [Required]
         [StringLength(255)]
+
         public string modulename { get; set; } = string.Empty;
 
         [Required]

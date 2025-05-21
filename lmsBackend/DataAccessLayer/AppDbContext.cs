@@ -33,6 +33,28 @@ namespace lmsBackend.DataAccessLayer
                 new Role { RoleId = 4, RoleName = "TA"}
             );
 
+            modelBuilder.Entity<User>()
+              .HasIndex(u => u.Email)
+              .IsUnique();
+
+               modelBuilder.Entity<Lob>()
+               .HasIndex(l => l.LobName)
+               .IsUnique();
+
+            modelBuilder.Entity<Courses>()
+               .HasIndex(c => c.course_name)
+               .IsUnique();
+
+            modelBuilder.Entity<Categories>()
+              .HasIndex(c => c.name)
+              .IsUnique();
+
+            modelBuilder.Entity<Module>()
+                .HasIndex(m => m.modulename)
+                .IsUnique();
+
+
+
             // User and Lob relationship
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Lob)

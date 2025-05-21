@@ -9,6 +9,7 @@ namespace lmsBackend.Models
 
         [Required]
         [StringLength(255)]
+
         public string LobName { get; set; } = string.Empty;
 
         [Required]

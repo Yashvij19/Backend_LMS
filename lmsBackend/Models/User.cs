@@ -16,14 +16,17 @@ namespace lmsBackend.Models
 
         [Required]
         [StringLength(255)]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; } = string.Empty;
 
         [Required]
         [StringLength(255)]
+        [RegularExpression(@"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+         ErrorMessage = "Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a number, and a special character.")]
         public string Password { get; set; } = string.Empty;
 
         [Required]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Phone number must be exactly 10 digits.")]
         public long? Phone { get; set; }
 
         [Required]

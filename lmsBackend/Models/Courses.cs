@@ -56,7 +56,6 @@ namespace lmsBackend.Models
         public DateTime updatedat { get; set; }
 
         //Relationship : one course has many modules
-
         public ICollection<Module> Modules { get; set; }
     }
 }
